@@ -28,8 +28,8 @@ run-py:
 
 test: test-c test-py
 
-test-c: tests/test_sort.out
-	@./tests/test_sort.out
+test-c: tests/test_bubble_sort.out
+	@./tests/test_bubble_sort.out
 
 test-py:
 	@python3 -m unittest discover -s tests -v
@@ -40,15 +40,15 @@ debug: src/main.debug.out
 # 선언만 있고 구현이 옆 파일에 있어도 된다. 대신 **한 폴더에 main은 하나만** 둔다.
 #   %.out        실행용 (Code Runner의 ▶ 버튼이 이 규칙을 부른다)
 #   %.debug.out  디버그용 (VS Code의 "C 디버그 (현재 파일)"이 부른다)
-# 명시 규칙(tests/test_sort.out 등)이 있으면 그쪽이 우선한다.
+# 명시 규칙(tests/test_bubble_sort.out 등)이 있으면 그쪽이 우선한다.
 %.out: %.c
 	$(CC) $(CFLAGS) -I$(@D) -o $@ $(wildcard $(@D)/*.c)
 
 %.debug.out: %.c
 	$(CC) $(DEBUGFLAGS) -I$(@D) -o $@ $(wildcard $(@D)/*.c)
 
-tests/test_sort.out: tests/test_sort.c src/sort.c src/sort.h
-	$(CC) $(CFLAGS) -Isrc -o $@ tests/test_sort.c src/sort.c
+tests/test_bubble_sort.out: tests/test_bubble_sort.c src/bubble_sort.c src/bubble_sort.h
+	$(CC) $(CFLAGS) -Isrc -o $@ tests/test_bubble_sort.c src/bubble_sort.c
 
 clean:
 	rm -f src/*.out tests/*.out

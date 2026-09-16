@@ -1,9 +1,7 @@
-/* 유닛 테스트 — 외부 프레임워크 없이 표준 C만 쓴다.
- * 실행: make test-c
- */
+/* 버블 정렬 유닛 테스트. 외부 프레임워크 없이 표준 C만 쓴다. */
 #include <stdio.h>
 #include <string.h>
-#include "sort.h"
+#include "bubble_sort.h"
 
 static int checks = 0;
 static int failures = 0;
@@ -16,7 +14,6 @@ static void printArray(const char *label, const int a[], int n) {
     printf("\n");
 }
 
-/* input을 정렬한 결과가 want와 같은지 본다. */
 static void expectSorted(const char *name, int input[], const int want[], int n) {
     checks++;
     bubbleSort(input, n);
@@ -57,7 +54,6 @@ int main(void) {
         expectSorted("원소 하나", a, want, 1);
     }
     {
-        /* n = 0이면 배열을 건드리지 않는다. 초기화해 두어야 경고가 없다. */
         int a[1] = {0};
         const int want[1] = {0};
         expectSorted("빈 배열", a, want, 0);
