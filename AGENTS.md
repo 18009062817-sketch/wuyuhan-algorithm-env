@@ -17,8 +17,8 @@
 ## 구조와 규약
 
 ```plaintext
-src/    sort.h · sort.c · main.c · sort.py · main.py
-tests/  test_sort.c · test_sort.py
+src/    bubble_sort.h · bubble_sort.c · main.c · bubble_sort.py · main.py
+tests/  test_bubble_sort.c · test_bubble_sort.py
 ```
 
 - **외부 라이브러리를 쓰지 않는다.** C는 표준 라이브러리만, Python은 표준

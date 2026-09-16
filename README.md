@@ -170,14 +170,19 @@ algorithm-env/
 ├── .vscode/                         # 빌드·디버그 설정 (F5, Cmd+Shift+B)
 ├── Makefile                         # run · test · debug · clean
 ├── src/
-│   ├── sort.h · sort.c              # C 구현
+│   ├── bubble_sort.h · bubble_sort.c # 버블 정렬 C 구현
 │   ├── main.c                       # C 실행 예제
-│   ├── sort.py                      # Python 구현
+│   ├── bubble_sort.py               # 버블 정렬 Python 구현
 │   └── main.py                      # Python 실행 예제
 └── tests/
-    ├── test_sort.c                  # C 유닛 테스트 (표준 C만 사용)
-    └── test_sort.py                 # Python 유닛 테스트 (unittest)
+  ├── test_bubble_sort.c           # 버블 정렬 C 유닛 테스트
+  └── test_bubble_sort.py          # 버블 정렬 Python 유닛 테스트
 ```
+
+알고리즘을 추가할 때는 구현과 테스트를 같은 이름으로 분리합니다. 예를 들어
+`quick_sort.c`·`quick_sort.h`·`quick_sort.py`와
+`test_quick_sort.c`·`test_quick_sort.py`를 만들고, C 테스트의 Makefile 규칙을
+추가하면 됩니다. `make run`과 `make test` 실행 방식은 그대로 사용합니다.
 
 ## 규약
 

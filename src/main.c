@@ -1,6 +1,6 @@
 /* 실행: make run-c */
 #include <stdio.h>
-#include "sort.h"
+#include "bubble_sort.h"
 
 int main(void) {
     int a[] = {6, 8, 5, 9, 10, 1, 7, 2, 4, 3};
